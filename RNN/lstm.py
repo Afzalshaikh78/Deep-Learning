@@ -1,11 +1,7 @@
-import torch 
 import torch.nn as nn
 
-
-rnn = nn.RNN(
+lstm = nn.LSTM(
   input_size=10,
   hidden_size=20,
   num_layesr = 1
 )
-
-
