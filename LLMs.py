@@ -11,6 +11,9 @@
 
 from transformers import pipeline
 
+
+summarize = pipeline("summarization")
+
 generator = pipeline(
     "text-generation",
     model="gpt2"
@@ -24,4 +27,11 @@ result = generator(
     pad_token_id=50256
 )
 
-print(result[0]["generated_text"])
+# print(result[0]["generated_text"])
+
+
+summary = summarize(
+  long_text,
+  max_length=100
+  min_length=30
+)
